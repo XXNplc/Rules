@@ -1,0 +1,203 @@
+# XXNplc made
+# Last Modified: 2026/05/12 19:13:17
+#>>全局配置
+ipv6: false
+vif_only: true
+hijack_dns:
+- '*'
+geoip_db_url: https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
+asn_db_url: https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb
+proxy_latency_test_url: http://cp.cloudflare.com/generate_204
+direct_latency_test_url: http://wifi.vivo.com.cn/generate_204
+#>>DNS配置
+dns:
+  upstreams:
+    🍄SSID:
+    - system
+    🇨🇳CN:
+    - https://doh.pub/dns-query
+    - https://223.5.5.5/dns-query
+    - ''
+    🃏Global:
+    - https://8.8.8.8/dns-query
+    - https://cloudflare-dns.com/dns-query
+  forward:
+  - ssid:
+      match: WIFI_5G
+      value: 🍄SSID
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/ProxyGFW.yaml
+      value: 🃏Global
+      disabled: false
+  - domain_wildcard:
+      match: '*'
+      value: 🇨🇳CN
+      disabled: false
+  public_ip_lookup_url: https://ifconfig.me/ip
+#>>策略组配置
+policy_groups:
+- smart:
+    name: 🧱Smart
+    flatten: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Auto.png
+    hidden: false
+- select:
+    name: 🕹️Proxy
+    policies:
+    - 🧱Smart
+    flatten: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Proxy.png
+    hidden: false
+- select:
+    name: 🍎Apple
+    policies:
+    - 🕹️Proxy
+    - DIRECT
+    flatten: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Apple.png
+    hidden: false
+- select:
+    name: ⏱️Speedtest
+    policies:
+    - 🕹️Proxy
+    - DIRECT
+    flatten: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Speedtest.png
+    hidden: false
+- select:
+    name: 🎧Spotify
+    policies:
+    - 🕹️Proxy
+    - DIRECT
+    flatten: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Spotify.png
+    hidden: false
+- select:
+    name: 🤖AI
+    policies:
+    - 🕹️Proxy
+    flatten: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/Bot.png
+    hidden: false
+- select:
+    name: 💶PayPal
+    policies:
+    - 🕹️Proxy
+    - DIRECT
+    flatten: false
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/mini/PayPal.png
+    hidden: false
+#>>规则配置
+rules:
+- protocol:
+    name: WebRTC
+    match: stun
+    policy: REJECT-NO-DROP
+    disabled: false
+- ssid:
+    match: KALWI_5G
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/Direct.yaml
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://ruleset.skk.moe/List/non_ip/reject.conf
+    policy: REJECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/AppleCN.yaml
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/AppleServers.yaml
+    policy: 🍎Apple
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Centralmatrix3/Matrix-io/refs/heads/master/Egern/Ruleset/Speedtest.yaml
+    policy: ⏱️Speedtest
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/Spotify.yaml
+    policy: 🎧Spotify
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/AI.yaml
+    policy: 🤖AI
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/PayPal.yaml
+    policy: 💶PayPal
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/WeChat.yaml
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/ChinaDomain.yaml
+    policy: DIRECT
+    disabled: true
+- rule_set:
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Egern/Rules/Lan.yaml
+    policy: DIRECT
+    disabled: false
+- geoip:
+    name: GEOIP
+    match: CN
+    policy: DIRECT
+    no_resolve: false
+    disabled: false
+- default:
+    name: FINAL
+    policy: 🕹️Proxy
+#>>脚本
+scriptings:
+- schedule:
+    name: 实时汇率
+    cron: 0 13 * * *
+    script_url: https://raw.githubusercontent.com/Peng-YM/QuanX/refs/heads/master/Tasks/exchange.js
+    disabled: false
+#>>模块
+modules:
+- url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/Block_HTTPDNS.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/BlockAdvertisers.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/Remove_ads_by_keli.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/xream/scripts/refs/heads/main/surge/modules/network-info/net-lsp-x.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/app2smile/rules/master/module/spotify.module
+  enabled: true
+- url: https://github.com/Maasea/sgmodule/raw/master/YouTube.Enhance.sgmodule
+  compat_arguments:
+    屏蔽Shorts按钮: 'true'
+  enabled: true
+- url: https://raw.githubusercontent.com/QingRex/LoonKissSurge/refs/heads/main/Surge/Beta/%E5%B0%8F%E7%BA%A2%E4%B9%A6%E5%8E%BB%E5%B9%BF%E5%91%8A.beta.sgmodule
+  enabled: true
+- url: https://raw.githubusercontent.com/sooyaaabo/Egern/refs/heads/main/Sgmodule/Weibo_remove_ads.sgmodule
+  enabled: true
+- name: 网易云去广告
+  url: https://kelee.one/Tool/Loon/Lpx/NeteaseCloudMusic_remove_ads.lpx
+  compat_arguments:
+    MY: 'true'
+    DT: 'true'
+    FX: 'true'
+    PRGG: 'true'
+    HMPR: 'true'
+    PRRK: 'false'
+    PRDRD: 'false'
+    PRSCVPT: 'false'
+    PRST: 'false'
+    PRRR: 'false'
+    PRMST: 'false'
+    PRCN: 'false'
+  enabled: true
+- url: https://whatshub.top/sgmodule/rates.sgmodule
+  enabled: true
+- url: https://github.com/ChinaTelecomOperators/ChinaUnicom/releases/download/Prerelease-Alpha/10010.sgmodule
+  compat_arguments:
+    cronexp: 0 12 * * *
+  enabled: true
