@@ -64,9 +64,7 @@ dns:
     - https://cloudflare-dns.com/dns-query#RULES
 #---------------------节点------------------------
 proxies:
-- name: "🇨🇳 DIRECT"
-  type: direct
-  udp: true
+- {name: 🇨🇳 DIRECT, type: direct}
 #---------------------锚点---------------------
 pr: &pr {type: select, proxies: [  🕹️Proxy, 🇨🇳 DIRECT, ✈️Smart-CF], use: [Airp1, Airp2]}
 #---------------------策略组---------------------
