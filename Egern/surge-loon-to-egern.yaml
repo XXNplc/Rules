@@ -1,6 +1,6 @@
 name: 插件模块跳转
 description:
- 色鸡 可莉插件中心跳转到 Egern
+ Surge LOON 插件中心跳转 Egern
 icon: https://iili.io/BDPVJ1I.png
 homepage: https://hub.kelee.one
 body_rewrites:
