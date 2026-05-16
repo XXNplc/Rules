@@ -1,0 +1,65 @@
+{
+  "colors" : {
+    "accent" : {
+      "dark" : "#49C6A6",
+      "light" : "#1D8E73"
+    },
+    "background" : {
+      "dark" : "#000000",
+      "light" : "#FCFBF6"
+    },
+    "blue" : {
+      "dark" : "#55B2FF",
+      "light" : "#2D70B8"
+    },
+    "cyan" : {
+      "dark" : "#43D5E8",
+      "light" : "#0B91A5"
+    },
+    "green" : {
+      "dark" : "#4BE0A7",
+      "light" : "#1E9B73"
+    },
+    "groupedBackground" : {
+      "dark" : "#050505",
+      "light" : "#F0EFE7"
+    },
+    "indigo" : {
+      "dark" : "#8D8DFF",
+      "light" : "#4E64B8"
+    },
+    "orange" : {
+      "dark" : "#FF8C42",
+      "light" : "#C0701D"
+    },
+    "purple" : {
+      "dark" : "#8B5CF6",
+      "light" : "#7055A5"
+    },
+    "red" : {
+      "dark" : "#FF4D73",
+      "light" : "#C13E4E"
+    },
+    "secondaryGroupedBackground" : {
+      "dark" : "#111111",
+      "light" : "#FFFFFF"
+    },
+    "tabBarBackground" : {
+      "dark" : "#0A0A0A",
+      "light" : "#FCFBF6"
+    },
+    "teal" : {
+      "dark" : "#38D0C8",
+      "light" : "#198D86"
+    },
+    "tertiaryGroupedBackground" : {
+      "dark" : "#1A1A1A",
+      "light" : "#E4E2D8"
+    },
+    "yellow" : {
+      "dark" : "#F5C542",
+      "light" : "#B58B19"
+    }
+  },
+  "name" : "Green"
+}
