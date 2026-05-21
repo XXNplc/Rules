@@ -1,8 +1,6 @@
 # 规则名称: Lan
 SSID:
   - KALWI_5G
-protocol_set:
-  - WebRTC: stun
 domain_suffix_set:
   - local
 ip_cidr_set:
@@ -12,5 +10,3 @@ ip_cidr_set:
   - 172.16.0.0/12
   - 192.168.0.0/16
   - 224.0.0.0/4
-ip_cidr6_set:
-  - fe80::/10
