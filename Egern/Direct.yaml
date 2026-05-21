@@ -1,3 +1,4 @@
+no_resolve: true
 user_agent_set:
   - MicroMessenger Client
   - WeChat*
@@ -12,8 +13,5 @@ domain_keyword_set:
   - .tmall.
   - baidu
 ip_cidr_set:
-  - 198.11.188.0/25
-  - 198.11.136.0/24
-no_resolve_set:
   - 198.11.188.0/25
   - 198.11.136.0/24
