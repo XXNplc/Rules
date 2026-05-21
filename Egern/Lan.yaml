@@ -1,5 +1,5 @@
 # 规则名称: Lan
-SSID:
+SSID_set:
   - KALWI_5G
 domain_suffix_set:
   - local
