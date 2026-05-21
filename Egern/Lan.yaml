@@ -1,0 +1,20 @@
+
+# 规则名称: Lan
+SSID:
+  - KALWI_5G
+protocol_set:
+  - WebRTC: stun
+policy_set:
+  - WebRTC: REJECT-NO-DROP
+  - SSID: DIRECT
+domain_suffix_set:
+  - local
+ip_cidr_set:
+  - 10.0.0.0/8
+  - 100.64.0.0/10
+  - 127.0.0.0/8
+  - 172.16.0.0/12
+  - 192.168.0.0/16
+  - 224.0.0.0/4
+ip_cidr6_set:
+  - fe80::/10
