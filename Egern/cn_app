@@ -1,0 +1,20 @@
+# 规则名称：China Apps
+# 规则统计：11
+
+no_resolve: true
+user_agent_set:
+  - MicroMessenger Client
+  - WeChat*
+  - MApi*          # 点评
+domain_keyword_set:
+  - alipay
+  - taobao
+  - alicdn
+  - aliyun
+  - .tmall.
+  - baidu
+ip_cidr_set:
+  - 198.11.188.0/25
+  - 198.11.136.0/24
+user_agent_set:
+  - "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
