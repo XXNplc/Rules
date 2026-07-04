@@ -1,6 +1,8 @@
 # 规则名称: Apple
-# 规则统计: 13
+# 规则统计: 14
 
+domain_set:
+  - apps.apple.com
 domain_suffix_set:
   - cdn-apple.com
   - mzstatic.com
