@@ -1,6 +1,5 @@
 # AppleSystem
 # Rule Count: 20
-no_resolve: true
 domain_set:
   - api.smoot.apple.com
   - captive.apple.com
