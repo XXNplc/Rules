@@ -1,0 +1,19 @@
+# 规则名称: Apple
+# 规则统计: 13
+
+domain_suffix_set:
+  - cdn-apple.com
+  - mzstatic.com
+  - aaplimg.com
+  - apple.co
+  - apple.com
+  - icloud-content.com
+  - icloud.com
+  - itunes.com
+  - itunes.apple.com
+  - lookup-api.apple.com
+  - me.com
+process_name_set:
+  - storedownloadd
+user_agent_set:
+  - com.apple.appstored*
