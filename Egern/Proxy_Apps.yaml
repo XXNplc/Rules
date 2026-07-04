@@ -11,7 +11,7 @@ domain_keyword_set:
   - dropbox
   - blogspot
   - whatsapp
-  domain_suffix_set:
+domain_suffix_set:
   - tw
   - gstatic.com
   - ampproject.org
