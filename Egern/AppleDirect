@@ -1,0 +1,6 @@
+# 规则名称：Apple Maps & Store 直连规则
+# 规则统计：2
+
+domain_suffix_set:
+  - ls.apple.com        # Apple 地图定位服务
+  - store.apple.com     # Apple 在线商店
