@@ -1,5 +1,6 @@
-# AppleSystem
-# Rule Count: 20
+# 规则名称：Apple 服务补充规则
+# 规则统计：20
+
 domain_set:
   - api.smoot.apple.com
   - captive.apple.com
