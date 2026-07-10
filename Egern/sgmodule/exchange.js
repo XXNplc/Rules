@@ -31,7 +31,7 @@ $httpClient.get(url, function(error, response, data) {
 `;
 
   const panel = {
-    title: `🪙当前汇率信息 ${timestamp}`,
+    title: `🪙今日汇率信息 ${timestamp}`,
     content: content,
     icon: "bitcoinsign.circle",
     "icon-color": "#EF8F1C"
