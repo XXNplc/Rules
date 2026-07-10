@@ -1,12 +1,13 @@
-name: 今日汇率
+name: 当前汇率
 description: 汇率面板
+homepage: https://yfamilys.com
 dns: {}
 scriptings:
 - generic:
-    name: 今日汇率
-    script_url: https://raw.githubusercontent.com/XXNplc/Rules/refs/heads/main/Egern/sgmodule/exchange.js
+    name: 当前汇率
+    script_url: https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/rates.js
     env:
       _compat.$argument: icon=yensign.circle&color=#D4AF37
 panels:
-- name: 今日汇率
-  script_name: 汇率面板
+- name: 当前汇率
+  script_name: 当前汇率
