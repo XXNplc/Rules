@@ -1,0 +1,13 @@
+name: 当前汇率
+description: 汇率面板
+homepage: https://yfamilys.com
+dns: {}
+scriptings:
+- generic:
+    name: 当前汇率
+    script_url: https://raw.githubusercontent.com/Peng-YM/QuanX/refs/heads/master/Tasks/exchange.js
+    env:
+      _compat.$argument: icon=yensign.circle&color=#D4AF37
+panels:
+- name: 当前汇率
+  script_name: 当前汇率
